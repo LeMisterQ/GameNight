@@ -1,0 +1,702 @@
+@import url(https://fonts.googleapis.com/css?family=Exo+2:200i);
+@import url("https://fonts.googleapis.com/css?family=Vibur");
+
+@font-face {
+	font-family: NeonAbsoluteSans;
+	src: url("/fonts/NeonAbsoluteSans.ttf");
+}
+
+@font-face {
+	font-family: ledsled;
+	src: url("/fonts/ledsled.ttf");
+}
+
+@font-face {
+	font-family: screaming_neon;
+	src: url("/fonts/screaming_neon.ttf");
+}
+
+:root {
+	/* Set neon color */
+	--neon-text-pink-color: #ff33cc;
+	--neon-text-cyan-color: #33ccff;
+	--neon-border-color: #08f;
+	--neon-border-team-color: #00d2ff;
+	--neon-buzzer-border-color: #ef3a1f;
+	--neon-buzzer-alternate-color: #9900ff;
+	--neon-buzzer-green-color: #22d23b;  
+}
+
+body, html{
+	margin:0;
+	padding:0;
+	font-family: "SF Pro Display","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
+	background-color: #FAFAFA;
+	overflow-x: hidden;
+	display: flex;
+	flex-flow: column nowrap;
+	align-items: center;
+	align-content: center;
+	justify-content: flex-start;
+	width: 100vw;
+	height: auto;
+	background-image: url(/img/brickblue.png);
+	background-repeat: repeat;
+	background-blend-mode: normal;
+	background-position: center;
+	background-size: contain;	
+}
+
+.container_main {
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: center;
+	align-content: center;
+	justify-content: center;
+	margin-bottom: 5vw;
+	margin-top: 1vw;
+	width: 100vw;
+}
+
+.gamestate_container{
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: center;
+	align-content: center;
+	justify-content: space-evenly;
+	width: 100%;
+}
+
+.team_container, .lowertable, .table_container, .answer_head{
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+	text-align: center;
+}
+
+.table_container{
+	display: flex;
+	flex-flow: column nowrap;
+	height: 33%;
+	margin-right: 2vw;
+	margin-left: 2vw;
+	margin-bottom: 5vh;
+}
+
+.team_container, .answer_head{
+	font-size: 0.75vw;
+	font-family: NeonAbsoluteSans;
+	color: #c09ef4;
+	text-shadow: 0.2rem 0.2rem 1rem #8400ff;
+	text-transform: uppercase;	
+	display: flex;
+	flex-flow: row nowrap;
+	width: 100%;
+	height: 15%;
+	margin-right: 2vw;
+	margin-left: 2vw;
+	margin-top: 5vh;
+	margin-bottom: 1vh;
+}
+
+.input_answers_container{
+	display: flex;
+	flex-flow: column nowrap;
+	align-items: center;
+	align-content: center;
+	justify-content: space-evenly;
+}
+
+.lowertable{
+	display: flex;
+	flex-flow: column nowrap;
+	max-width: 20%;
+	margin-left: 1vw;
+	margin-right: 1vw;
+	align-items: center;
+	align-content: center;
+	justify-content: space-evenly;	
+}
+
+.points_container, .okdiv{
+	display: flex;
+	flex-flow: row nowrap;
+	font-family: ledsled;
+	font-size: 3.5vw;
+	color: #b6f8aa;
+	text-shadow: 0.2rem 0.2rem 1rem #02ff3a;
+}
+
+.okdiv.error{
+	display: flex;
+	flex-flow: row nowrap;
+	font-family: ledsled;
+	font-size: 3.5vw;
+	color: red;
+	text-shadow: 0.2rem 0.2rem 1rem #02ff3a;
+}
+
+.points_container.pts{
+	font-family: ledsled;
+	font-size: 1vw;
+	color: #b6f8aa;
+	text-shadow: 0.2rem 0.2rem 1rem #02ff3a;
+	vertical-align: middle;
+}
+
+.points{
+	font-family: ledsled;
+	font-size: 3.5vw;
+	width: 50%;
+	cursor: pointer;
+}
+
+.points.add:hover, .points.sub:hover{
+	color: white;
+}
+
+.points.sub{
+	color: red;
+}
+
+.points.add{
+	color: blue;
+}
+
+.reset-buzz, .applause, .go_answer{
+	font-family: screaming_neon;
+	text-align: center;
+	text-transform: uppercase;
+	color: #eaddf1;
+	margin-top: 0.5vh;
+	margin-bottom: 0.5vh;
+	margin-right: 0.5vw;
+	margin-left: 0.5vw;
+	padding: 0.5vw;
+	border: 0.1rem solid #fff;
+	border-radius: .5rem;
+	animation-name: flicker-command;
+	animation-duration: 1.5s;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+	animation-fill-mode: forwards;
+	cursor: pointer;	
+}
+
+.go_answer{
+	margin-top: 2.5vh;
+}
+
+.applause, .go_answer{
+	font-size: 1vw;
+}
+
+.reset-buzzer{
+	font-size: 0.5vw;
+}
+
+.buzzer_all{
+	font-family: screaming_neon;
+	font-size: 1.25vw;
+	/*font-weight: bolder;
+	font-style: italic;*/
+	text-align: center;
+	text-transform: uppercase;
+	color: #eaddf1;
+	margin-top: 0.5vh;
+	margin-bottom: 0.5vh;
+	margin-right: 0.5vw;
+	margin-left: 0.5vw;	
+	padding: 1.5vw;
+	border: 0.2rem solid #fff;
+	border-radius: .5rem;
+	animation-name: flicker-command;
+	animation-duration: 1.5s;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+	animation-fill-mode: forwards;
+	cursor: pointer;
+}
+
+.buzzer_object{
+	font-family: screaming_neon;
+	font-size: 1.25vw;
+	/*font-weight: bolder;
+	font-style: italic;*/
+	text-align: center;
+	text-transform: uppercase;
+	color: #c0eac6;
+	margin-top: 0.5vh;
+	margin-bottom: 0.5vh;
+	margin-right: 0.5vw;
+	margin-left: 0.5vw;	
+	padding: 1.5vw;
+	border: 0.2rem solid #fff;
+	border-radius: .5rem;
+	animation-name: flicker-buzzer-green;
+	animation-duration: 1.5s;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+	animation-fill-mode: forwards;
+	cursor: pointer;
+}
+
+.buzzer_object:hover{
+	animation-name: flicker-buzzer-green-hovered;
+	animation-duration: 1.5s;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+	animation-fill-mode: forwards;	
+}
+
+
+.buzzer_all:hover, .reset-buzz:hover, .applause:hover, .go_answer:hover {
+	animation-name: flicker-command-hovered;
+	animation-duration: 1.5s;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+	animation-fill-mode: forwards;
+	cursor: pointer;	
+}
+
+.good, #bonus{
+	font-family: screaming_neon;
+	font-size: 1.5vw;
+	/*font-weight: bolder;
+	font-style: italic;*/
+	text-align: center;
+	text-transform: uppercase;
+	color: #c0eac6;
+	margin-top: 0.5vh;
+	margin-bottom: 0.5vh;
+	margin-right: 0.5vw;
+	margin-left: 0.5vw;	
+	padding: 1.5vw;
+	border: 0.1rem solid #fff;
+	border-radius: .5rem;
+	animation-name: flicker-buzzer-green;
+	animation-duration: 1.5s;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+	animation-fill-mode: forwards;
+	cursor: pointer;	
+}
+
+.good:hover, #bonus:hover{
+	animation-name: flicker-buzzer-green-hovered;
+	animation-duration: 1.5s;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+	animation-fill-mode: forwards;		
+}
+
+.teams_in_game, .wrong{
+	font-family: screaming_neon;
+	font-size: 1.5vw;
+	/*font-weight: bolder;
+	font-style: italic;*/
+	text-align: center;
+	text-transform: uppercase;
+	color: #eac0c0;
+	margin-top: 0.5vh;
+	margin-bottom: 0.5vh;
+	margin-right: 0.5vw;
+	margin-left: 0.5vw;	
+	padding: 1.5vw;
+	border: 0.1rem solid #fff;
+	border-radius: .5rem;
+	animation-name: flicker-buzzer;
+	animation-duration: 1.5s;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+	animation-fill-mode: forwards;
+	cursor: pointer;	
+}
+
+.teams_in_game:hover, .wrong:hover{
+	animation-name: flicker-buzzer-hovered;
+	animation-duration: 1.5s;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+	animation-fill-mode: forwards;
+}
+
+.closegame, .opengame{
+	font-family: screaming_neon;
+	font-size: 1.5vw;
+	/*font-weight: bolder;
+	font-style: italic;*/
+	text-align: center;
+	text-transform: uppercase;
+	color: #eac0c0;
+	margin-top: 0.5vh;
+	margin-bottom: 0.5vh;
+	margin-right: 0.5vw;
+	margin-left: 0.5vw;	
+	padding: 1.5vw;
+	border: 0.1rem solid #fff;
+	border-radius: .5rem;
+	animation-name: flicker-command;
+	animation-duration: 1.5s;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+	animation-fill-mode: forwards;
+	cursor: pointer;	
+}
+
+.closegame:hover, .opengame:hover{
+	font-family: screaming_neon;
+	font-size: 1.5vw;
+	/*font-weight: bolder;
+	font-style: italic;*/
+	text-align: center;
+	text-transform: uppercase;
+	color: #eac0c0;
+	margin-top: 0.5vh;
+	margin-bottom: 0.5vh;
+	margin-right: 0.5vw;
+	margin-left: 0.5vw;	
+	padding: 1.5vw;
+	border: 0.1rem solid #fff;
+	border-radius: .5rem;
+	animation-name: flicker-command-hovered;
+	animation-duration: 1.5s;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+	animation-fill-mode: forwards;
+	cursor: pointer;	
+}
+
+
+@keyframes flicker-buzzer {
+
+    0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+		
+        text-shadow:
+            -0.2rem -0.2rem 1rem var(--neon-buzzer-border-color),
+            0.2rem 0.2rem 1rem var(--neon-buzzer-border-color),
+            0 0 .5rem var(--neon-buzzer-border-color),
+            0 0 1rem var(--neon-buzzer-border-color),
+            0 0 2rem var(--neon-buzzer-border-color),
+            0 0 3rem var(--neon-buzzer-border-color);		
+
+        box-shadow:
+            0 0 .5rem #fff,
+            inset 0 0 .5rem #fff,
+            0 0 1rem var(--neon-buzzer-border-color),
+            inset 0 0 2rem var(--neon-buzzer-border-color),
+            0 0 2rem var(--neon-buzzer-border-color),
+            inset 0 0 4rem var(--neon-buzzer-border-color);
+    }
+}
+
+@keyframes flicker-buzzer-hovered {
+
+    0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+		
+        text-shadow:
+            -0.2rem -0.2rem 1rem var(--neon-buzzer-border-color),
+            0.2rem 0.2rem 1rem var(--neon-buzzer-border-color),
+            0 0 2rem var(--neon-buzzer-border-color),
+            0 0 4rem var(--neon-buzzer-border-color),
+            0 0 6rem var(--neon-buzzer-border-color),
+            0 0 8rem var(--neon-buzzer-border-color);		
+
+        box-shadow:
+            0 0 .5rem #fff,
+            inset 0 0 .5rem #fff,
+            0 0 2rem var(--neon-buzzer-border-color),
+            inset 0 0 2rem var(--neon-buzzer-border-color),
+            0 0 4rem var(--neon-buzzer-border-color),
+            inset 0 0 4rem var(--neon-buzzer-border-color);
+    }
+}
+
+@keyframes flicker-command {
+
+    0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+		
+        text-shadow:
+            -0.2rem -0.2rem 1rem var(--neon-buzzer-alternate-color),
+            0.2rem 0.2rem 1rem var(--neon-buzzer-alternate-color),
+            0 0 .5rem var(--neon-buzzer-alternate-color),
+            0 0 1rem var(--neon-buzzer-alternate-color),
+            0 0 2rem var(--neon-buzzer-alternate-color),
+            0 0 3rem var(--neon-buzzer-alternate-color);		
+
+        box-shadow:
+            0 0 .5rem #fff,
+            inset 0 0 .5rem #fff,
+            0 0 1rem var(--neon-buzzer-alternate-color),
+            inset 0 0 2rem var(--neon-buzzer-alternate-color),
+            0 0 2rem var(--neon-buzzer-alternate-color),
+            inset 0 0 4rem var(--neon-buzzer-alternate-color);
+    }
+}
+
+@keyframes flicker-command-hovered {
+
+    0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+		
+        text-shadow:
+            -0.2rem -0.2rem 1rem var(--neon-buzzer-alternate-color),
+            0.2rem 0.2rem 1rem var(--neon-buzzer-alternate-color),
+            0 0 2rem var(--neon-buzzer-alternate-color),
+            0 0 4rem var(--neon-buzzer-alternate-color),
+            0 0 6rem var(--neon-buzzer-alternate-color),
+            0 0 8rem var(--neon-buzzer-alternate-color);		
+
+        box-shadow:
+            0 0 .5rem #fff,
+            inset 0 0 .5rem #fff,
+            0 0 2rem var(--neon-buzzer-alternate-color),
+            inset 0 0 2rem var(--neon-buzzer-alternate-color),
+            0 0 4rem var(--neon-buzzer-alternate-color),
+            inset 0 0 4rem var(--neon-buzzer-alternate-color);
+    }
+}
+
+
+@keyframes flicker-buzzer-green {
+
+    0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+		
+        text-shadow:
+            -0.2rem -0.2rem 1rem var(--neon-buzzer-green-color),
+            0.2rem 0.2rem 1rem var(--neon-buzzer-green-color),
+            0 0 .5rem var(--neon-buzzer-green-color),
+            0 0 1rem var(--neon-buzzer-green-color),
+            0 0 2rem var(--neon-buzzer-green-color),
+            0 0 3rem var(--neon-buzzer-green-color);		
+
+        box-shadow:
+            0 0 .5rem #fff,
+            inset 0 0 .5rem #fff,
+            0 0 1rem var(--neon-buzzer-green-color),
+            inset 0 0 2rem var(--neon-buzzer-green-color),
+            0 0 2rem var(--neon-buzzer-green-color),
+            inset 0 0 4rem var(--neon-buzzer-green-color);
+    }
+}
+
+@keyframes flicker-buzzer-green-hovered {
+
+    0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+		
+        text-shadow:
+            -0.2rem -0.2rem 1rem var(--neon-buzzer-green-color),
+            0.2rem 0.2rem 1rem var(--neon-buzzer-green-color),
+            0 0 2rem var(--neon-buzzer-green-color),
+            0 0 4rem var(--neon-buzzer-green-color),
+            0 0 6rem var(--neon-buzzer-green-color),
+            0 0 8rem var(--neon-buzzer-green-color);		
+
+        box-shadow:
+            0 0 .5rem #fff,
+            inset 0 0 .5rem #fff,
+            0 0 2rem var(--neon-buzzer-green-color),
+            inset 0 0 2rem var(--neon-buzzer-green-color),
+            0 0 4rem var(--neon-buzzer-green-color),
+            inset 0 0 4rem var(--neon-buzzer-green-color);
+    }
+}
+
+/* INPUT SEARCH */
+
+
+#select_answer {
+	font-family: inherit;
+	border: 0;
+	border-bottom: 2px solid #c09ef4;
+	outline: 0;
+	font-size: 2vh;
+	color: white;
+	padding: 1vh;
+	background: transparent;
+	transition: border-color 0.2s;
+
+	&::placeholder {
+		color: transparent;
+	}
+
+	&:placeholder-shown ~ .form__label {
+		font-size: 1.3rem;
+		cursor: text;
+		top: 20px;
+	}
+}
+
+#select_answer:focus {
+
+	padding-bottom: 6px;  
+	font-weight: 700;
+	border-width: 3px;
+	border-image-slice: 1;
+}
+
+/*Phone Portrait CSS*/
+@media screen and (max-width: 1000px) and (orientation:portrait) {
+
+}
+
+/*Phone Landscape CSS*/
+@media screen and (max-width: 1000px) and (orientation:landscape) {
+	
+	
+	.container_main {
+		display: flex;
+		flex-flow: row wrap;
+		align-items: center;
+		align-content: center;
+		justify-content: center;
+		margin-bottom: 5vw;
+		margin-top: 1vw;
+		width: 100vw;
+	}
+	
+	.gamestate_container {
+		display: flex;
+		flex-flow: column nowrap;
+		align-items: center;
+		align-content: center;
+		justify-content: space-evenly;
+		width: 100%;
+	}
+	
+	.team_container {
+		font-size: 3.5vw;
+		font-family: NeonAbsoluteSans;
+		color: #c09ef4;
+		text-shadow: 0.2rem 0.2rem 1rem #8400ff;
+		text-transform: uppercase;	
+		display: flex;
+		flex-flow: row nowrap;
+		width: 100%;
+		height: 15%;
+		margin-right: 2vw;
+		margin-left: 2vw;
+		margin-top: 5vh;
+		margin-bottom: 1vh;
+	}	
+	
+	.points_container, .okdiv{
+		display: flex;
+		flex-flow: row nowrap;
+		font-family: ledsled;
+		color: #b6f8aa;
+		text-shadow: 0.2rem 0.2rem 1rem #02ff3a;
+	}
+
+	.okdiv.error{
+		display: flex;
+		flex-flow: row nowrap;
+		font-family: ledsled;
+		color: red;
+		text-shadow: 0.2rem 0.2rem 1rem #02ff3a;
+	}
+
+	.points_container.pts{
+		font-family: ledsled;
+		color: #b6f8aa;
+		text-shadow: 0.2rem 0.2rem 1rem #02ff3a;
+		vertical-align: middle;
+	}
+
+	.points{
+		font-family: ledsled;
+		width: 50%;
+		cursor: pointer;
+	}
+	
+	.points, .points_container.pts, .okdiv.error, .points_container, .okdiv{
+		font-size: 5vw;
+	}
+
+	
+	.answer_head {
+		font-size: 5vw;
+		font-family: NeonAbsoluteSans;
+		color: #c09ef4;
+		text-shadow: 0.2rem 0.2rem 1rem #8400ff;
+		text-transform: uppercase;	
+		display: flex;
+		flex-flow: row nowrap;
+		width: 100%;
+		height: 15%;
+		margin-right: 2vw;
+		margin-left: 2vw;
+		margin-top: 5vh;
+		margin-bottom: 1vh;
+	}
+		
+	#select_answer {
+		font-family: inherit;
+		border: 0;
+		border-bottom: 2px solid #c09ef4;
+		outline: 0;
+		font-size: 2.5vw;
+		color: white;
+		margin-bottom: 5vh;
+		padding: 1vh;
+		background: transparent;
+		transition: border-color 0.2s;
+
+		&::placeholder {
+			color: transparent;
+		}
+
+		&:placeholder-shown ~ .form__label {
+			font-size: 1.3rem;
+			cursor: text;
+			top: 20px;
+		}
+	}
+	
+	.input_answers_container{
+		font-size: 10vw;
+		display: flex;
+		flex-flow: column nowrap;
+		align-items: center;
+		align-content: center;
+		justify-content: space-evenly;
+		margin-bottom: 5vh;
+	}
+	
+	.landscape_btn_container{
+		display: flex;
+		flex-flow: row wrap;
+		align-items: center;
+		align-content: center;
+		justify-content: space-evenly;
+	}
+
+	.reset-buzz, .applause, .go_answer{
+		font-size: 5vw;
+		font-family: screaming_neon;
+		text-align: center;
+		text-transform: uppercase;
+		color: #eaddf1;
+		margin-top: 1vh;
+		margin-bottom: 1vh;
+		margin-right: 1vw;
+		margin-left: 1vw;
+		padding: 1vw;
+		border: 0.1rem solid #fff;
+		border-radius: .5rem;
+		animation-name: flicker-command;
+		animation-duration: 1.5s;
+		animation-iteration-count: infinite;
+		animation-direction: alternate;
+		animation-fill-mode: forwards;
+		cursor: pointer;	
+	}
+
+	
+	.good, #bonus, .teams_in_game, .wrong, .buzzer_all, .buzzer_object{
+		font-size: 5vw;
+	}
+
+	
+}
+
+

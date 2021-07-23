@@ -1,0 +1,130 @@
+@media screen and (max-width: 1000px) and (orientation:portrait) {
+	/* The Modal (background) */
+	.modal_canvas {
+	  display: none; /* Hidden by default */
+	  position: fixed; /* Stay in place */
+	  z-index: 10; /* Sit on top */
+	  left: 0;
+	  top: 0;
+	  width: 100%; /* Full width */
+	  height: 100%; /* Full height */
+	  overflow: auto; /* Enable scroll if needed */
+	  background-color: rgb(0,0,0); /* Fallback color */
+	  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+	}
+
+	/* Modal Content */
+	.modal-content_canvas {
+	  background-color: #fefefe;
+	  width: 80%;
+	}
+
+	/* The Close Button */
+	.close_canvas{
+	  color: #aaaaaa;
+	  float: right;
+	  font-size: 5vw;
+	  font-weight: bold;
+	}
+
+	.close_canvas:hover,
+	.close_canvas:focus {
+	  color: #000;
+	  text-decoration: none;
+	  cursor: pointer;
+	}	
+}
+
+@media screen and (max-width: 1000px) and (orientation:landscape) {
+	/* The Modal (background) */
+	.modal_canvas {
+	  display: none; /* Hidden by default */
+	  position: fixed; /* Stay in place */
+	  z-index: 10; /* Sit on top */
+	  left: 0;
+	  top: 0;
+	  width: 100%; /* Full width */
+	  height: 100%; /* Full height */
+	  overflow: auto; /* Enable scroll if needed */
+	  background-color: rgb(0,0,0); /* Fallback color */
+	  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+	}
+
+	/* Modal Content */
+	.modal-content_canvas {
+	  background-color: #fefefe;
+	  width: 80%;
+	}
+
+	/* The Close Button */
+	.close_canvas{
+	  color: #aaaaaa;
+	  float: right;
+	  font-size: 5vw;
+	  font-weight: bold;
+	}
+
+	.close_canvas:hover,
+	.close_canvas:focus {
+	  color: #000;
+	  text-decoration: none;
+	  cursor: pointer;
+	}
+}
+
+@media screen and (min-width: 1001px){
+	/* The Modal (background) */
+	.modal_canvas {
+	  display: none; /* Hidden by default */
+	  position: fixed; /* Stay in place */
+	  z-index: 10; /* Sit on top */
+	  left: 0;
+	  top: 0;
+	  width: 100%; /* Full width */
+	  height: 100%; /* Full height */
+	  overflow: auto; /* Enable scroll if needed */
+	  background-color: rgb(0,0,0); /* Fallback color */
+	  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+	}
+
+	/* Modal Content */
+	.modal-content_canvas {
+	  background-color: #fefefe;
+	  width: 80%;
+	}
+
+	/* The Close Button */
+	.close_canvas{
+	  color: #aaaaaa;
+	  float: right;
+	  font-size: 2vw;
+	  font-weight: bold;
+	}
+
+	.close_canvas:hover,
+	.close_canvas:focus {
+	  color: #000;
+	  text-decoration: none;
+	  cursor: pointer;
+	}	
+}
+
+/*
+canvas#myRadarChart{
+	padding: 0;
+    margin-top: 5vh;
+	margin-bottom: 5vh;
+    display: block;
+    width: 50vh;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+*/
+
+@keyframes backgroundanim {
+  from {background-color: #505050;opacity:0.8;}
+  to {background-color: black ;opacity:0.9;}
+}

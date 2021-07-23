@@ -1,0 +1,1181 @@
+﻿@import url(https://fonts.googleapis.com/css?family=Exo+2:200i);
+@import url("https://fonts.googleapis.com/css?family=Vibur");
+
+@font-face {
+	font-family: NeonAbsoluteSans;
+	src: url("../fonts/NeonAbsoluteSans.ttf");
+}
+
+@font-face {
+	font-family: ledsled;
+	src: url("../fonts/ledsled.ttf");
+}
+
+@font-face {
+	font-family: screaming_neon;
+	src: url("../fonts/screaming_neon.ttf");
+}
+
+:root {
+  /* Set neon color */
+  --neon-text-pink-color: #ff33cc;
+  --neon-text-cyan-color: #33ccff;
+  --neon-border-color: #08f;
+  --neon-border-team-color: #00d2ff;
+  --neon-buzzer-border-color: #ef3a1f;
+  --neon-myteam-color: #ff8533;
+  --neon-buzzing-color: #ef3a1f;
+  --neon-buzzing-border-color: #ef3a1f;
+}
+
+body, html{
+	margin:0;
+	padding:0;
+	font-family: "SF Pro Display","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
+	background-color: #FAFAFA;
+	
+}
+
+body{
+	overflow-x: hidden;
+}
+
+
+.container_main {
+	display: flex;
+	flex-flow: row nowrap;
+	width: 100vw;
+	height: 100vh;
+	background-image: url(../img/brickblue.png);
+	background-repeat: repeat;
+	background-blend-mode: normal;
+	background-position: center;
+	background-size: contain;
+	align-items: center;
+	align-content: center;
+	justify-content: center;
+}
+
+/*////////////////////
+////TEAMS SECTION////
+////////////////////*/
+
+section.tableaux{
+	display: flex;
+	flex-flow: column nowrap;
+	height: 100%;
+	width: 25%;
+	align-items: stretch;
+	align-content: stretch;
+	justify-content: flex-start;
+}
+
+.team_container, .lowertable, .table_container{
+	align-items: center;
+	align-content: center;
+	justify-content: center;
+	text-align: center;
+}
+
+.table_container{
+	display: flex;
+	flex-flow: column nowrap;
+	height: 33%;
+	margin-right: 2vw;
+	margin-left: 2vw;
+	margin-bottom: 5vh;
+}
+
+.team_container{
+	font-size: 1.75vw;
+	font-family: NeonAbsoluteSans;
+	color: #c09ef4;
+	text-shadow: 0.2rem 0.2rem 1rem #8400ff;
+	text-transform: uppercase;
+	display: flex;
+	flex-flow: row nowrap;
+	width: 100%;
+	height: 15%;
+	margin-right: 2vw;
+	margin-left: 2vw;
+	margin-top: 5vh;
+	margin-bottom: 1vh;
+	-webkit-touch-callout: none; /* iOS Safari */
+	-webkit-user-select: none; /* Safari */
+	-khtml-user-select: none; /* Konqueror HTML */
+	-moz-user-select: none; /* Old versions of Firefox */
+	-ms-user-select: none; /* Internet Explorer/Edge */
+	user-select: none; /* Non-prefixed version, currently */	
+}
+
+.myteam{
+	color: #ffe6b3;
+	animation-name: flicker-myteam;
+	animation-duration: 1.5s;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+	animation-fill-mode: forwards;
+}
+
+.lowertable{
+	display: flex;
+	flex-flow: row nowrap;
+	width: 100%;
+	height: 100%;
+	border: 0.2rem solid #f6f7f7;
+	border-radius: 2rem;
+	animation-name: flicker-teamframe;
+	animation-duration: 1.5s;
+	animation-iteration-count: infinite;
+	animation-direction: alternate-reverse;
+	animation-fill-mode: forwards;
+}
+
+.player_container{
+	display: flex;
+	flex-flow: row wrap;
+	align-items: center;
+	align-content: center;
+	justify-content: center;
+	width: 50%;
+	height: 100%;
+}
+
+.playername {
+	font-family: "Vibur", cursive;
+	color: #e88dc8;
+	font-size: 1.5vw;
+	text-shadow: 0.2rem 0.2rem 1rem #eb0098;
+	width: 50%;
+	padding: 5px;
+	border-radius: 5px;
+	-webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently */		
+}
+
+.points_container{
+	font-family: ledsled;
+	font-size: 3.5vw;
+	color: #b6f8aa;
+	text-shadow: 0.2rem 0.2rem 1rem #02ff3a;
+	width: 50%;
+	-webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently */
+}
+
+.points_container.pts{
+	display: inline-block;
+	font-family: ledsled;
+	font-size: 1.5vw;
+	text-align: left;	
+}
+
+.addpoints{
+	font-family: ledsled;
+	font-size: 3.5vw;
+	color: blue;
+	width: 50%;
+}
+
+.subpoints{
+	font-family: ledsled;
+	font-size: 3.5vw;
+	color: red;
+	width: 50%;
+}
+
+.teamname, .pointsheader {
+	width: 50%;
+}
+
+/*////////////////////
+////BUZZER SECTION////
+////////////////////*/
+
+section.buzzer{
+	display: flex;
+	flex-flow: column nowrap;
+	height: 100%;
+	width: 50%;
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	align-items: center;
+	align-content: center;
+	justify-content: flex-start;
+}
+
+.toptitle{
+	display: flex;
+	flex-flow: column nowrap;
+	height: 100%;
+	width: 100%;
+	align-items: center;
+	align-content: center;
+	justify-content: flex-start;
+	max-height: 20%;
+	-webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently */	
+}
+
+
+h1 {
+	font-size: 2vw;
+	font-weight: bolder;
+	text-align: center;
+	/*font-style: italic;*/
+	color: #fff;
+	margin-top: 2.5vh;
+	margin-bottom: 2.5vh;
+	padding: 1vw;
+	border: 0.4rem solid #fff;
+	border-radius: 2rem;
+	animation-name: flicker-frame;
+	animation-duration: 1.5s;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+	animation-fill-mode: forwards;
+}
+
+.alternative{
+	animation-name: flicker-frame-alternative;
+	cursor: pointer;
+}
+
+.alternative:hover{
+	animation-name: flicker-frame-alternative-hovered;
+	animation-duration: 1.5s;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+	animation-fill-mode: forwards;
+	cursor: pointer;
+}
+
+.pink, .cyan {
+	display: inline-block;
+}
+
+.pink {
+	font-family: NeonAbsoluteSans;
+	color: #ffe6ff;
+	text-transform: uppercase;
+	animation-name: flicker-pink;
+	animation-duration: 1.5s;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+	animation-fill-mode: forwards;
+}
+
+.cyan {
+	font-family: "Vibur", cursive;
+	color: #e6f5ff;
+	animation-name: flicker-cyan;
+	animation-duration: 1s;
+	animation-iteration-count: infinite;
+	animation-direction: alternate-reverse;
+	animation-fill-mode: forwards;
+}
+
+.buzzer_container{
+	min-height: 60%;
+	display: flex;
+	flex-flow: column nowrap;
+	width: 100%;
+	align-items: center;
+	align-content: center;
+	justify-content: center;
+}
+
+.buzzer_object{
+	font-family: screaming_neon;
+	font-size: 4vw;
+	/*font-weight: bolder;
+	font-style: italic;*/
+	text-align: center;
+	text-transform: uppercase;
+	color: #eac0c0;
+	margin-top: 2.5vh;
+	margin-bottom: 2.5vh;
+	padding: 1.5vw;
+	border: 0.5rem solid #fff;
+	border-radius: 2rem;
+	animation-name: flicker-buzzer;
+	animation-duration: 1.5s;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+	animation-fill-mode: forwards;
+	cursor: pointer;	
+}
+
+.buzzer_object:hover{
+	animation-name: flicker-buzzer-hovered;
+	animation-duration: 1.5s;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+	animation-fill-mode: forwards;
+}
+
+.clicked{
+	font-family: screaming_neon;
+	font-size: 4vw;
+	/*font-weight: bolder;
+	font-style: italic;*/
+	text-align: center;
+	text-transform: uppercase;
+	color: grey;
+	margin-top: 2.5vh;
+	margin-bottom: 2.5vh;
+	padding: 1.5vw;
+	border: 0.5rem solid grey;
+	border-radius: 2rem;
+	opacity: 0.75;
+}
+.buzzer_object, .clicked{
+	-webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently */
+}
+
+.teamturn{
+	font-size: 1.5vw;
+	color: #eac0c0;
+	animation-name: flicker-myteam;
+	animation-duration: 1.5s;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+	animation-fill-mode: forwards;
+}
+
+.footer_container{
+	display: flex;
+	max-height: 17%;
+	max-width: 100%;
+	flex-flow: row nowrap;
+	align-items: center;
+	align-content: center;
+	justify-content: space-evenly;
+}
+
+.coktail{
+	height: 100%;
+	-webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently */	
+}
+
+/* Animate neon flicker */
+@keyframes flicker-cyan {
+
+	0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+
+		text-shadow:
+			-0.2rem -0.2rem 1rem var(--neon-text-cyan-color),
+			0.2rem 0.2rem 1rem var(--neon-text-cyan-color),
+			0 0 2rem var(--neon-text-cyan-color),
+			0 0 4rem var(--neon-text-cyan-color),
+			0 0 6rem var(--neon-text-cyan-color),
+			0 0 8rem var(--neon-text-cyan-color),
+			0 0 10rem var(--neon-text-cyan-color);
+
+	}
+}
+
+@keyframes flicker-pink {
+
+	0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+
+		text-shadow:
+			-0.2rem -0.2rem 1rem var(--neon-text-pink-color),
+			0.2rem 0.2rem 1rem var(--neon-text-pink-color),
+			0 0 2rem var(--neon-text-pink-color),
+			0 0 4rem var(--neon-text-pink-color),
+			0 0 6rem var(--neon-text-pink-color),
+			0 0 8rem var(--neon-text-pink-color),
+			0 0 10rem var(--neon-text-pink-color);
+
+	}
+}
+
+@keyframes flicker-frame {
+
+	0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+
+		box-shadow:
+			0 0 .5rem #fff,
+			inset 0 0 .5rem #fff,
+			0 0 2rem var(--neon-border-color),
+			inset 0 0 2rem var(--neon-border-color),
+			0 0 4rem var(--neon-border-color),
+			inset 0 0 4rem var(--neon-border-color);
+	}
+
+	20%, 24%, 55% {
+		box-shadow: none;
+	}
+}
+
+@keyframes flicker-frame-alternative {
+
+	0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+
+		box-shadow:
+			0 0 1rem #fff,
+			inset 0 0 1rem #fff,
+			0 0 1.25rem var(--neon-border-color),
+			inset 0 0 1.25rem var(--neon-border-color),
+			0 0 1.5rem var(--neon-border-color),
+			inset 0 0 1.5rem var(--neon-border-color);
+	}
+
+}
+
+@keyframes flicker-frame-alternative-hovered {
+
+	0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+
+		box-shadow:
+			0 0 2rem #fff,
+			inset 0 0 5rem #fff,
+			0 0 4rem var(--neon-border-color),
+			inset 0 0 4rem var(--neon-border-color),
+			0 0 6rem var(--neon-border-color),
+			inset 0 0 6rem var(--neon-border-color);
+	}
+
+}
+
+@keyframes flicker-teamframe {
+
+	0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+
+		box-shadow:
+			0 0 .75rem #fff,
+			inset 0 0 .75rem #fff,
+			0 0 1.25rem var(--neon-border-team-color),
+			inset 0 0 1.25rem var(--neon-border-team-color),
+			0 0 1.5rem var(--neon-border-team-color),
+			inset 0 0 1.5rem var(--neon-border-team-color);
+	}
+}
+
+@keyframes flicker-buzzer {
+
+	0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+
+		text-shadow:
+			-0.2rem -0.2rem 1rem var(--neon-buzzer-border-color),
+			0.2rem 0.2rem 1rem var(--neon-buzzer-border-color),
+			0 0 .5rem var(--neon-buzzer-border-color),
+			0 0 1rem var(--neon-buzzer-border-color),
+			0 0 2rem var(--neon-buzzer-border-color),
+			0 0 3rem var(--neon-buzzer-border-color);
+
+		box-shadow:
+			0 0 .5rem #fff,
+			inset 0 0 .5rem #fff,
+			0 0 1rem var(--neon-buzzer-border-color),
+			inset 0 0 2rem var(--neon-buzzer-border-color),
+			0 0 2rem var(--neon-buzzer-border-color),
+			inset 0 0 4rem var(--neon-buzzer-border-color);
+	}
+}
+
+@keyframes flicker-buzzer-hovered {
+
+	0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+
+		text-shadow:
+			-0.2rem -0.2rem 1rem var(--neon-buzzer-border-color),
+			0.2rem 0.2rem 1rem var(--neon-buzzer-border-color),
+			0 0 2rem var(--neon-buzzer-border-color),
+			0 0 4rem var(--neon-buzzer-border-color),
+			0 0 6rem var(--neon-buzzer-border-color),
+			0 0 8rem var(--neon-buzzer-border-color);
+
+		box-shadow:
+			0 0 .5rem #fff,
+			inset 0 0 .5rem #fff,
+			0 0 2rem var(--neon-buzzer-border-color),
+			inset 0 0 2rem var(--neon-buzzer-border-color),
+			0 0 4rem var(--neon-buzzer-border-color),
+			inset 0 0 4rem var(--neon-buzzer-border-color);
+	}
+}
+
+@keyframes flicker-myteam {
+
+	0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+
+		text-shadow:
+			-0.2rem -0.2rem 1rem var(--neon-myteam-color),
+			0.2rem 0.2rem 1rem var(--neon-myteam-color),
+			0 0 .5rem var(--neon-myteam-color),
+			0 0 1rem var(--neon-myteam-color),
+			0 0 2rem var(--neon-myteam-color),
+			0 0 3rem var(--neon-myteam-color);
+	}
+}
+
+.buzzingteam{
+	animation-name: flicker-buzzing-team-name;
+	animation-duration: 1.5s;
+	animation-iteration-count: 8;
+	animation-direction: alternate;
+	animation-fill-mode: forwards;	
+}
+
+@keyframes flicker-buzzing-team-name {
+
+	0%, 19%, 21%, 33%, 35%, 44%, 46%, 56%, 58%, 68%, 70%, 98%, 100% {
+
+		text-shadow:
+			-0.2rem -0.2rem 1rem var(--neon-buzzing-color),
+			0.2rem 0.2rem 1rem var(--neon-buzzing-color),
+			0 0 .5rem var(--neon-buzzing-color),
+			0 0 1rem var(--neon-buzzing-color),
+			0 0 2rem var(--neon-buzzing-color),
+			0 0 3rem var(--neon-buzzing-color);
+	}
+	
+	20%, 34%, 45%, 57%, 69%, 99% {
+		text-shadow: none;
+	}
+}
+
+.buzzingborder{
+	animation-name: flicker-buzzing-team-border;
+	animation-duration: 1.5s;
+	animation-iteration-count: 8;
+	animation-direction: alternate;
+	animation-fill-mode: forwards;	
+}
+
+@keyframes flicker-buzzing-team-border {
+
+	0%, 19%, 21%, 33%, 35%, 44%, 46%, 56%, 58%, 68%, 70%, 98%, 100% {
+
+		box-shadow:
+			0 0 .5rem #fff,
+			inset 0 0 .5rem #fff,
+			0 0 2rem var(--neon-buzzing-border-color),
+			inset 0 0 2rem var(--neon-buzzing-border-color),
+			0 0 4rem var(--neon-buzzing-border-color),
+			inset 0 0 4rem var(--neon-buzzing-border-color);
+	}
+	
+	20%, 34%, 45%, 57%, 69%, 99% {
+		box-shadow: none;
+	}	
+}
+
+/*
+@media screen and (min-width: 1001px){
+
+}
+*/
+
+@media screen and (max-width: 1000px) and (orientation:portrait) {
+
+	.container_main {
+		display: flex;
+		flex-flow: column nowrap;
+		width: 100vw;
+		height: auto;
+		background-image: url(../img/brickblue.png);
+		background-repeat: repeat;
+		background-blend-mode: normal;
+		background-position: center;
+		background-size: contain;
+		align-items: center;
+		align-content: center;
+		justify-content: center;
+	}
+
+	section.buzzer {
+		display: flex;
+		flex-flow: column nowrap;
+		height: 100%;
+		width: 100%;
+		align-items: center;
+		align-content: center;
+		justify-content: space-evenly;
+	}
+
+	.toptitle {
+		display: flex;
+		flex-flow: column nowrap;
+		width: 100%;
+		align-items: center;
+		align-content: center;
+		justify-content: flex-start;
+		max-height: 20%;
+		-webkit-touch-callout: none; /* iOS Safari */
+		-webkit-user-select: none; /* Safari */
+		-khtml-user-select: none; /* Konqueror HTML */
+		-moz-user-select: none; /* Old versions of Firefox */
+		-ms-user-select: none; /* Internet Explorer/Edge */
+		user-select: none; /* Non-prefixed version, currently */		
+	}
+
+	.buzzer_container {
+		display: flex;
+		flex-flow: column nowrap;
+		width: 100%;
+		align-items: center;
+		align-content: center;
+		justify-content: center;
+	}
+
+	.footer_container {
+		display: flex;
+		width: 100%;
+		flex-flow: column nowrap;
+		align-items: center;
+		align-content: center;
+		justify-content: space-evenly;
+	}
+
+	h1 {
+		font-size: 5.5vh;
+		font-weight: bolder;
+		text-align: center;
+		/* font-style: italic; */
+		color: #fff;
+		margin-top: 5.5vh;
+		margin-bottom: 5.5vh;
+		padding: 2vh;
+		border: 0.4rem solid #fff;
+		border-radius: 2rem;
+		animation-name: flicker-frame;
+		animation-duration: 1.5s;
+		animation-iteration-count: infinite;
+		animation-direction: alternate;
+		animation-fill-mode: forwards;
+		
+	}
+
+	.alternative {
+		font-size: 3.5vh;
+		animation-name: flicker-frame-alternative;
+		cursor: pointer;
+		
+	}
+
+	.buzzer_object {
+		font-family: screaming_neon;
+		font-size: 20vw;
+		text-align: center;
+		text-transform: uppercase;
+		color: #eac0c0;
+		margin-top: 10vh;
+		margin-bottom: 5vh;
+		padding: 8.5vw 6.5vw 8.5vw 6.5vw;
+		border: 0.5rem solid #fff;
+		border-radius: 2rem;
+		animation-name: flicker-buzzer;
+		animation-duration: 1.5s;
+		animation-iteration-count: infinite;
+		animation-direction: alternate;
+		animation-fill-mode: forwards;
+		cursor: pointer;
+	}
+
+	.clicked {
+		font-family: screaming_neon;
+		font-size: 20vw;
+		text-align: center;
+		text-transform: uppercase;
+		color: grey;
+		margin-top: 10vh;
+		margin-bottom: 5vh;
+		padding: 6.5vw;
+		border: 0.5rem solid grey;
+		border-radius: 2rem;
+		opacity: 0.75;
+	}
+
+	.teamturn{
+		font-size: 6.5vw;
+		color: #eac0c0;
+		animation-name: flicker-myteam;
+		animation-duration: 1.5s;
+		animation-iteration-count: infinite;
+		animation-direction: alternate;
+		animation-fill-mode: forwards;
+		margin-bottom: 5vh;
+	}
+
+	.img_footer_container{
+		display: flex;
+		width: 100%;
+		flex-flow: row nowrap;
+		align-items: center;
+		align-content: center;
+		justify-content: space-evenly;
+		margin-bottom: 2.5vh;
+	}
+
+	.coktail{
+		width: 20%;
+		-webkit-touch-callout: none; /* iOS Safari */
+		-webkit-user-select: none; /* Safari */
+		-khtml-user-select: none; /* Konqueror HTML */
+		-moz-user-select: none; /* Old versions of Firefox */
+		-ms-user-select: none; /* Internet Explorer/Edge */
+		user-select: none; /* Non-prefixed version, currently */
+	}
+
+	section.tableaux {
+		display: flex;
+		flex-flow: column nowrap;
+		/* height: 100%; */
+		width: 100%;
+		align-items: center;
+		align-content: center;
+		justify-content: space-evenly;
+		/*margin-top: 5vh;*/
+	}
+
+	.table_container {
+		display: flex;
+		flex-flow: column nowrap;
+		width: 80%;
+		margin-right: 2vw;
+		margin-left: 2vw;
+		margin-bottom: 5vh;
+	}
+
+	.team_container {
+		font-size: 4.5vh;
+		font-family: NeonAbsoluteSans;
+		color: #c09ef4;
+		text-shadow: 0.2rem 0.2rem 1rem #8400ff;
+		text-transform: uppercase;
+		display: flex;
+		flex-flow: row nowrap;
+		width: 100%;
+		height: 15%;
+		margin-right: 2vw;
+		margin-left: 2vw;
+		margin-top: 5vh;
+		margin-bottom: 1vh;
+		-webkit-touch-callout: none; /* iOS Safari */
+		-webkit-user-select: none; /* Safari */
+		-khtml-user-select: none; /* Konqueror HTML */
+		-moz-user-select: none; /* Old versions of Firefox */
+		-ms-user-select: none; /* Internet Explorer/Edge */
+		user-select: none; /* Non-prefixed version, currently */		
+	}
+	
+	.lowertable{
+		display: flex;
+		flex-flow: column nowrap;
+		width: 100%;
+		height: 100%;
+		border: 0.2rem solid #f6f7f7;
+		border-radius: 2rem;
+		animation-name: flicker-teamframe;
+		animation-duration: 1.5s;
+		animation-iteration-count: infinite;
+		animation-direction: alternate-reverse;
+		animation-fill-mode: forwards;
+	}	
+
+	.player_container {
+		display: flex;
+		flex-flow: column nowrap;
+		align-items: center;
+		align-content: center;
+		justify-content: center;
+		width: 100%;
+		height: 100%;
+		margin-top: 1.5vh;
+		margin-bottom: 1.5vh;
+	}
+
+	.playername {
+		font-family: "Vibur", cursive;
+		color: #e88dc8;
+		font-size: 4vh;
+		text-shadow: 0.2rem 0.2rem 1rem #eb0098;
+		width: 100%;
+		padding: 5px;
+		border-radius: 5px;
+		-webkit-touch-callout: none; /* iOS Safari */
+		-webkit-user-select: none; /* Safari */
+		-khtml-user-select: none; /* Konqueror HTML */
+		-moz-user-select: none; /* Old versions of Firefox */
+		-ms-user-select: none; /* Internet Explorer/Edge */
+		user-select: none; /* Non-prefixed version, currently */		
+	}
+
+	.points_holder{
+		display: flex;
+		flex-flow: row wrap;
+		align-items: center;
+		align-content: center;
+		justify-content: center;
+		width: 100%;		
+	}
+	
+	.points_container {
+		font-family: ledsled;
+		font-size: 10vh;
+		color: #b6f8aa;
+		text-shadow: 0.2rem 0.2rem 1rem #02ff3a;
+		width: 50%;
+		text-align: right;
+		-webkit-touch-callout: none; /* iOS Safari */
+		-webkit-user-select: none; /* Safari */
+		-khtml-user-select: none; /* Konqueror HTML */
+		-moz-user-select: none; /* Old versions of Firefox */
+		-ms-user-select: none; /* Internet Explorer/Edge */
+		user-select: none; /* Non-prefixed version, currently */
+	}
+
+	.points_container.pts {
+		font-family: ledsled;
+		font-size: 3.5vh;
+		color: #b6f8aa;
+		width: 50%;
+		text-align: left;
+	}
+
+	.mobile_footer{
+		display: flex;
+		flex-flow: column nowrap;
+		align-items: center;
+		align-content: center;
+		justify-content: center;
+		width: 100%;		
+	}
+
+	.buzzer_object, .alternative, h1, .team_container, .points_container, .player_container{
+		-webkit-touch-callout: none; /* iOS Safari */
+		-webkit-user-select: none; /* Safari */
+		-khtml-user-select: none; /* Konqueror HTML */
+		-moz-user-select: none; /* Old versions of Firefox */
+		-ms-user-select: none; /* Internet Explorer/Edge */
+		user-select: none; /* Non-prefixed version, currently */	
+	}
+	
+	.buzzingborder{
+		animation-name: flicker-buzzing-team-border;
+		animation-duration: 1.5s;
+		animation-iteration-count: 8;
+		animation-direction: alternate;
+		animation-fill-mode: forwards;	
+	}	
+	
+}
+
+@media screen and (max-width: 1000px) and (orientation:landscape) {
+
+
+	.container_main {
+		display: flex;
+		flex-flow: column nowrap;
+		width: 100vw;
+		height: auto;
+		background-image: url(../img/brickblue.png);
+		background-repeat: repeat;
+		background-blend-mode: normal;
+		background-position: center;
+		background-size: contain;
+		align-items: center;
+		align-content: center;
+		justify-content: center;
+	}
+
+	section.buzzer {
+		display: flex;
+		flex-flow: column nowrap;
+		height: 100%;
+		width: 100%;
+		align-items: center;
+		align-content: center;
+		justify-content: space-evenly;
+	}
+
+	.toptitle {
+		display: flex;
+		flex-flow: column nowrap;
+		width: 100%;
+		align-items: center;
+		align-content: center;
+		justify-content: flex-start;
+		max-height: 20%;
+		-webkit-touch-callout: none; /* iOS Safari */
+		-webkit-user-select: none; /* Safari */
+		-khtml-user-select: none; /* Konqueror HTML */
+		-moz-user-select: none; /* Old versions of Firefox */
+		-ms-user-select: none; /* Internet Explorer/Edge */
+		user-select: none; /* Non-prefixed version, currently */
+	}
+
+	.buzzer_container {
+		display: flex;
+		flex-flow: column nowrap;
+		width: 100%;
+		align-items: center;
+		align-content: center;
+		justify-content: center;
+	}
+
+	.footer_container {
+		display: flex;
+		width: 100%;
+		flex-flow: column nowrap;
+		align-items: center;
+		align-content: center;
+		justify-content: space-evenly;
+	}
+
+	h1 {
+		font-size: 20vh;
+		font-weight: bolder;
+		text-align: center;
+		/* font-style: italic; */
+		color: #fff;
+		margin-top: 6vh;
+		margin-bottom: 6vh;
+		padding: 7vh;
+		border: 0.4rem solid #fff;
+		border-radius: 2rem;
+		animation-name: flicker-frame;
+		animation-duration: 1.5s;
+		animation-iteration-count: infinite;
+		animation-direction: alternate;
+		animation-fill-mode: forwards;
+	}
+
+	.alternative {
+		font-size: 10vh;
+		animation-name: flicker-frame-alternative;
+		cursor: pointer;
+	}
+
+	.buzzer_object {
+		font-family: screaming_neon;
+		font-size: 18vw;
+		text-align: center;
+		text-transform: uppercase;
+		color: #eac0c0;
+		margin-top: 10vh;
+		margin-bottom: 5vh;
+		padding: 8.5vw 6.5vw 8.5vw 6.5vw;
+		border: 0.5rem solid #fff;
+		border-radius: 2rem;
+		animation-name: flicker-buzzer;
+		animation-duration: 1.5s;
+		animation-iteration-count: infinite;
+		animation-direction: alternate;
+		animation-fill-mode: forwards;
+		cursor: pointer;
+	}
+
+	.clicked {
+		font-family: screaming_neon;
+		font-size: 18vw;
+		text-align: center;
+		text-transform: uppercase;
+		color: grey;
+		margin-top: 10vh;
+		margin-bottom: 5vh;
+		padding: 6.5vw;
+		border: 0.5rem solid grey;
+		border-radius: 2rem;
+		opacity: 0.75;
+	}
+
+	.teamturn{
+		font-size: 6.5vw;
+		color: #eac0c0;
+		animation-name: flicker-myteam;
+		animation-duration: 1.5s;
+		animation-iteration-count: infinite;
+		animation-direction: alternate;
+		animation-fill-mode: forwards;
+		margin-bottom: 5vh;
+	}
+
+	.img_footer_container{
+		display: flex;
+		width: 100%;
+		flex-flow: row nowrap;
+		align-items: center;
+		align-content: center;
+		justify-content: space-evenly;
+		margin-bottom: 2.5vh;
+	}
+
+	.coktail{
+		width: 10%;
+		-webkit-touch-callout: none; /* iOS Safari */
+		-webkit-user-select: none; /* Safari */
+		-khtml-user-select: none; /* Konqueror HTML */
+		-moz-user-select: none; /* Old versions of Firefox */
+		-ms-user-select: none; /* Internet Explorer/Edge */
+		user-select: none; /* Non-prefixed version, currently */		
+	}
+
+	section.tableaux {
+		display: flex;
+		flex-flow: column nowrap;
+		/* height: 100%; */
+		width: 100%;
+		align-items: center;
+		align-content: center;
+		justify-content: space-evenly;
+		/*margin-top: 5vh;*/
+	}
+
+	.table_container {
+		display: flex;
+		flex-flow: column nowrap;
+		width: 80%;
+		margin-right: 2vw;
+		margin-left: 2vw;
+		margin-bottom: 5vh;
+	}
+
+	.team_container {
+		font-size: 18vh;
+		font-family: NeonAbsoluteSans;
+		color: #c09ef4;
+		text-shadow: 0.2rem 0.2rem 1rem #8400ff;
+		text-transform: uppercase;
+		display: flex;
+		flex-flow: row nowrap;
+		width: 100%;
+		height: 15%;
+		margin-right: 2vw;
+		margin-left: 2vw;
+		margin-top: 5vh;
+		margin-bottom: 1vh;
+		-webkit-touch-callout: none; /* iOS Safari */
+		-webkit-user-select: none; /* Safari */
+		-khtml-user-select: none; /* Konqueror HTML */
+		-moz-user-select: none; /* Old versions of Firefox */
+		-ms-user-select: none; /* Internet Explorer/Edge */
+		user-select: none; /* Non-prefixed version, currently */		
+	}
+	
+	.lowertable{
+		display: flex;
+		flex-flow: column nowrap;
+		width: 100%;
+		height: 100%;
+		border: 0.2rem solid #f6f7f7;
+		border-radius: 2rem;
+		animation-name: flicker-teamframe;
+		animation-duration: 1.5s;
+		animation-iteration-count: infinite;
+		animation-direction: alternate-reverse;
+		animation-fill-mode: forwards;
+	}		
+
+	.player_container {
+		display: flex;
+		flex-flow: row wrap;
+		align-items: center;
+		align-content: center;
+		justify-content: center;
+		width: 100%;
+		height: 100%;
+		margin-top: 10vh;
+		margin-bottom: 10vh;
+	}
+
+	.playername {
+		font-family: "Vibur", cursive;
+		color: #e88dc8;
+		font-size: 12vh;
+		text-shadow: 0.2rem 0.2rem 1rem #eb0098;
+		width: 100%;
+		border-radius: 5px;
+		-webkit-touch-callout: none; /* iOS Safari */
+		-webkit-user-select: none; /* Safari */
+		-khtml-user-select: none; /* Konqueror HTML */
+		-moz-user-select: none; /* Old versions of Firefox */
+		-ms-user-select: none; /* Internet Explorer/Edge */
+		user-select: none; /* Non-prefixed version, currently */		
+	}
+	
+	.points_holder{
+		display: flex;
+		flex-flow: row wrap;
+		align-items: center;
+		align-content: center;
+		justify-content: center;
+		width: 100%;		
+	}
+
+	.points_container {
+		font-family: ledsled;
+		font-size: 25vh;
+		color: #b6f8aa;
+		text-shadow: 0.2rem 0.2rem 1rem #02ff3a;
+		width: 50%;
+		text-align: right;
+		-webkit-touch-callout: none; /* iOS Safari */
+		-webkit-user-select: none; /* Safari */
+		-khtml-user-select: none; /* Konqueror HTML */
+		-moz-user-select: none; /* Old versions of Firefox */
+		-ms-user-select: none; /* Internet Explorer/Edge */
+		user-select: none; /* Non-prefixed version, currently */		
+	}
+
+	.points_container.pts {
+		font-family: ledsled;
+		font-size: 15vh;
+		color: #b6f8aa;
+		width: 50%;
+		text-align: left;
+	}
+
+	.mobile_footer{
+		display: flex;
+		flex-flow: column nowrap;
+		align-items: center;
+		align-content: center;
+		justify-content: center;
+		width: 100%;		
+	}
+
+	.buzzer_object, .alternative, h1, .team_container, .points_container, .player_container{
+		-webkit-touch-callout: none; /* iOS Safari */
+		-webkit-user-select: none; /* Safari */
+		-khtml-user-select: none; /* Konqueror HTML */
+		-moz-user-select: none; /* Old versions of Firefox */
+		-ms-user-select: none; /* Internet Explorer/Edge */
+		user-select: none; /* Non-prefixed version, currently */	
+	}
+	
+	.buzzingborder{
+		animation-name: flicker-buzzing-team-border;
+		animation-duration: 1.5s;
+		animation-iteration-count: 8;
+		animation-direction: alternate;
+		animation-fill-mode: forwards;	
+	}	
+	
+}

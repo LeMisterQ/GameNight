@@ -1,0 +1,514 @@
+@media screen and (min-width: 1001px){
+	/* The Modal (background) */
+	.modal_popup {
+		display: none;
+		flex-flow:column nowrap;
+		align-items: center;
+		align-content: center;
+		justify-content: center;
+		position: fixed;
+		z-index: 10;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		overflow: hidden;
+		animation-name: backgroundanim;
+		animation-duration: .4s;
+		/*animation-fill-mode: forwards;*/
+		text-align: center;
+		opacity: 0.9;
+		background-color: black;
+	}
+
+	.modal_popup_img {
+		display: none;
+		flex-flow:column nowrap;
+		align-items: center;
+		align-content: center;
+		justify-content: center;
+		position: fixed;
+		z-index: 10;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		overflow: hidden;
+		animation-name: backgroundanim;
+		animation-duration: .4s;
+		/*animation-fill-mode: forwards;*/
+		text-align: center;
+		opacity: 0.9;
+		background-color: black;
+	}
+
+	.modal_popup_vid {
+		display: none;
+		flex-flow:column nowrap;
+		align-items: center;
+		align-content: center;
+		justify-content: center;
+		position: fixed;
+		z-index: 10;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		overflow: hidden;
+		animation-name: backgroundanim;
+		animation-duration: .4s;
+		/*animation-fill-mode: forwards;*/
+		text-align: center;
+		opacity: 1;
+		background-color: black;
+	}
+
+	.modal_popup.sobre {
+		background-color: black;
+		animation-name: backgroundanim-sobre;
+		animation-duration: .4s;
+	}
+
+	/* Modal Content */
+	.modal-content_popup {
+		display: flex;
+		flex-flow: row nowrap;
+		align-items: center;
+		align-content: center;
+		justify-content: flex-start;
+		background-color: #fefefe;
+		margin: auto;
+		padding: 0.5vw;
+		border: 1px solid #888;
+		width: 80%;
+		border-radius: 15px;
+
+	}
+
+	.modal-content_popup_img {
+		display: flex;
+		flex-flow: row nowrap;
+		align-items: center;
+		align-content: center;
+		justify-content: flex-start;
+		background-color: #fefefe;
+		margin: auto;
+		padding: 0.5vw;
+		border: 1px solid #888;
+		border-radius: 15px;
+
+	}
+
+	.pop_up_content_container{
+		display: flex;
+		flex-flow: column nowrap;
+		align-items: flex-start;
+		align-content: flex-start;
+		justify-content: flex-start;
+		width: 90%;
+	}
+
+	/* The Close Button */
+	.close_popup{
+		color: #aaaaaa;
+		float: right;
+		font-size: 3.5vw;
+		font-weight: bold;
+		width: 10%;
+	}
+
+	.close_popup:hover,	.close_popup:focus {
+		color: #000;
+		text-decoration: none;
+		cursor: pointer;
+	}
+
+	.article_popup_other {
+		display: flex;
+		align-items: center;
+		align-content: center;
+		justify-content: center;
+		width: 100%;
+		font-size: 1vw;
+		margin-top: 1vh;
+		margin-bottom: 1vh;
+		-webkit-touch-callout: none; /* iOS Safari */
+		-webkit-user-select: none; /* Safari */
+		-khtml-user-select: none; /* Konqueror HTML */
+		-moz-user-select: none; /* Old versions of Firefox */
+		-ms-user-select: none; /* Internet Explorer/Edge */
+		user-select: none; /* Non-prefixed version, currently */		
+	}
+
+
+	.modal_btn {
+		display: flex;
+		flex-flow: row nowrap;
+		align-items: center;
+		align-content: center;
+		justify-content: space-evenly;
+		width: 100%;
+	}
+
+
+	.yesbtn, .nobtn{
+		color: white;
+		padding: 1vw;
+		margin-top: 1vw;
+		margin-bottom: 1vw;
+		border: none;
+		cursor: pointer;
+		width: 15%;
+		opacity: 0.95;
+		font-size: 1vw;
+		min-height: 10vh;
+		max-height: 10vh;
+	}
+
+	.yesbtn{
+		background-color: #99c2ff;
+	}
+
+	.yesbtn:hover{
+		background-color: #1a75ff;
+	}
+
+	.nobtn{
+		background-color: #ff9999;
+	}
+	.nobtn:hover{
+		background-color: #ff1a1a;
+	}
+}
+
+
+@media screen and (max-width: 1000px) and (orientation:portrait) {
+
+	.modal_popup {
+		display: none;
+		flex-flow:column nowrap;
+		align-items: center;
+		align-content: center;
+		justify-content: space-evenly;
+		position: fixed;
+		z-index: 10;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		overflow: hidden;
+		animation-name: backgroundanim;
+		animation-duration: 0.4s;
+		/*animation-fill-mode: forwards;*/
+		text-align: center;
+		opacity: 0.9;
+		background-color: black;
+	}
+
+	.modal_popup_img {
+		display: none;
+		flex-flow:column nowrap;
+		align-items: center;
+		align-content: center;
+		justify-content: center;
+		position: fixed;
+		z-index: 10;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		overflow: hidden;
+		animation-name: backgroundanim;
+		animation-duration: 0.4s;
+		/*animation-fill-mode: forwards;*/
+		text-align: center;
+		opacity: 0.9;
+		background-color: black;
+	}
+	
+	.modal_popup_vid {
+		display: none;
+		flex-flow:column nowrap;
+		align-items: center;
+		align-content: center;
+		justify-content: center;
+		position: fixed;
+		z-index: 10;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		overflow: hidden;
+		animation-name: backgroundanim;
+		animation-duration: 0.4s;
+		/*animation-fill-mode: forwards;*/
+		text-align: center;
+		opacity: 1;
+		background-color: black;
+	}	
+	
+	/* Modal Content */
+	.modal-content_popup {
+		display: flex;
+		flex-flow: column nowrap;
+		align-items: center;
+		align-content: center;
+		justify-content: flex-start;
+		background-color: #fefefe;
+		margin-top : 2.5vh;
+		margin-bottom : 2.5vh;	
+		padding: 3.5vw;
+		border: 1px solid #888;
+		width: 70%;
+		border-radius: 2.5vw;
+
+	}
+
+	.modal-content_popup_img {
+		display: flex;
+		flex-flow: row nowrap;
+		align-items: center;
+		align-content: center;
+		justify-content: flex-start;
+		background-color: #fefefe;
+		margin: auto;
+		padding: 3.5vw;
+		border: 1px solid #888;
+		border-radius: 2.5vw;
+
+	}
+
+	/* The Close Button */
+	.close_popup{
+	  color: #aaaaaa;
+	  float: right;
+	  font-size: 15vh;
+	  margin-left: 5vw;
+	  margin-right: 5vw;
+	  font-weight: bold;
+	}
+
+	.close_popup:hover,	.close_popup:focus {
+	  color: #000;
+	  text-decoration: none;
+	  cursor: pointer;
+	}
+
+	.article_popup_other {
+		display: flex;
+		align-items: center;
+		align-content: center;
+		justify-content: center;
+		width: 100%;
+		font-size: 6vw;
+		-webkit-touch-callout: none; /* iOS Safari */
+		-webkit-user-select: none; /* Safari */
+		-khtml-user-select: none; /* Konqueror HTML */
+		-moz-user-select: none; /* Old versions of Firefox */
+		-ms-user-select: none; /* Internet Explorer/Edge */
+		user-select: none; /* Non-prefixed version, currently */
+	}
+	
+	.closebtn, .closebtn.grey, .deniedbtn {
+		background-color: #4CAF50;
+		color: white;
+		padding: 16px 20px;
+		margin-top: 2.5vh;
+		margin-bottom: 2.5vh;
+		border: none;
+		border-radius: 10px;
+		cursor: pointer;
+		width: 30vw;
+		opacity: 0.9;
+		font-size: 6vw;
+		min-height: 6vh;
+		max-height: 6vh;
+	}
+
+	.closebtn.grey {
+		background-color: #F2F4F4;
+		color: black;
+	}
+
+	.closebtn:hover {
+		opacity:.8;
+	}
+
+	.closebtn:disabled, .deniedbtn:disabled{
+		background-color: #FFDDDD;
+	}	
+
+}
+
+@media screen and (max-width: 1000px) and (orientation:landscape) {
+	.modal_popup {
+		display: none;
+		flex-flow:column nowrap;
+		align-items: center;
+		align-content: center;
+		justify-content: space-evenly;
+		position: fixed;
+		z-index: 10;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		overflow: hidden;
+		animation-name: backgroundanim;
+		animation-duration: 0.4s;
+		/*animation-fill-mode: forwards;*/
+		text-align: center;
+		opacity: 0.9;
+		background-color: black;
+	}
+
+	.modal_popup_img {
+		display: none;
+		flex-flow:column nowrap;
+		align-items: center;
+		align-content: center;
+		justify-content: center;
+		position: fixed;
+		z-index: 10;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		overflow: hidden;
+		animation-name: backgroundanim;
+		animation-duration: 0.4s;
+		/*animation-fill-mode: forwards;*/
+		text-align: center;
+		opacity: 0.9;
+		background-color: black;
+	}
+	
+	.modal_popup_vid {
+		display: none;
+		flex-flow:column nowrap;
+		align-items: center;
+		align-content: center;
+		justify-content: center;
+		position: fixed;
+		z-index: 10;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		overflow: hidden;
+		animation-name: backgroundanim;
+		animation-duration: 0.4s;
+		/*animation-fill-mode: forwards;*/
+		text-align: center;
+		opacity: 1;
+		background-color: black;
+	}	
+	
+	/* Modal Content */
+	.modal-content_popup {
+		display: flex;
+		flex-flow: column nowrap;
+		align-items: center;
+		align-content: center;
+		justify-content: flex-start;
+		background-color: #fefefe;
+		margin-top : 0.5vh;
+		margin-top : 0.5vh;
+		padding: 3.5vw;
+		border: 1px solid #888;
+		width: 70%;
+		border-radius: 2.5vw;
+
+	}
+
+	.modal-content_popup_img {
+		display: flex;
+		flex-flow: row nowrap;
+		align-items: center;
+		align-content: center;
+		justify-content: flex-start;
+		background-color: #fefefe;
+		margin: auto;
+		padding: 3.5vw;
+		border: 1px solid #888;
+		border-radius: 2.5vw;
+
+	}
+	
+	/* The Close Button */
+	.close_popup{
+	  color: #aaaaaa;
+	  float: right;
+	  font-size: 2vw;
+	  font-weight: bold;
+	}
+
+	.close_popup:hover,	.close_popup:focus {
+	  color: #000;
+	  text-decoration: none;
+	  cursor: pointer;
+	}
+
+	.article_popup_other {
+		display: flex;
+		align-items: center;
+		align-content: center;
+		justify-content: center;
+		width: 100%;
+		font-size: 3vw;
+		-webkit-touch-callout: none; /* iOS Safari */
+		-webkit-user-select: none; /* Safari */
+		-khtml-user-select: none; /* Konqueror HTML */
+		-moz-user-select: none; /* Old versions of Firefox */
+		-ms-user-select: none; /* Internet Explorer/Edge */
+		user-select: none; /* Non-prefixed version, currently */
+	}
+	
+	.closebtn, .closebtn.grey, .deniedbtn {
+		background-color: #4CAF50;
+		color: white;
+		padding: 16px 20px;
+		margin-top: 1vh;
+		margin-bottom: 1vh;
+		border: none;
+		border-radius: 10px;
+		cursor: pointer;
+		width: 20vw;
+		opacity: 0.9;
+		font-size: 2vw;
+		min-height: 15vh;
+		max-height: 15vh;
+	}
+
+	.closebtn.grey {
+		background-color: #F2F4F4;
+		color: black;
+	}
+
+	.closebtn:hover {
+		opacity:.8;
+	}
+
+	.closebtn:disabled, .deniedbtn:disabled{
+		background-color: #FFDDDD;
+	}	
+
+}
+
+@keyframes backgroundanim {
+
+	0%   {background-color: black; opacity:0.95;}
+	25%  {background-color: #ff4d4d;}
+	50%  {background-color: black; opacity:0.90;}
+	75%  {background-color: #005ce6;}
+	100% {background-color: black; opacity:0.85;}
+
+}
+
+@keyframes backgroundanim-sobre {
+
+	0%   {opacity:0.2;}
+	50%  {opacity:0.6;}
+	100% {opacity:0.9;}
+
+}

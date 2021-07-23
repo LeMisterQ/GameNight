@@ -1,0 +1,12 @@
+.add{
+	opacity: 0.3;
+}
+
+.add:hover{
+	opacity: 0.9;
+}
+
+.image-upload>input {
+	display: none;
+  
+}
